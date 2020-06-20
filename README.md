@@ -1,0 +1,2 @@
+# java_basic
+java基础代码笔记，重helloword到MySQL数据的代码笔记备份
