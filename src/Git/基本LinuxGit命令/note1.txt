@@ -1,0 +1,45 @@
+---------------1.基本
+1. cd    到某个目录
+2. cd..  回到某一个目录
+3. pwd    显示当前所在的目录路径
+4. ls(or ||)  ls列出当前目录所有文件，||却更加详细
+5. touch 新建一个文件 比如 touch index.js 在当前目录新建 index.js 文件。
+6. rm    删除文件比如 rm index.js 就会删除当前目录的 index.js 文件
+7. mkdir 创建目录，就是新建文件夹，不知道能不能多级创建，试试。不能
+8. rm -r 移除remove 当前目录文件夹，
+9. mv 移动move 文件，mv index.txt src 把 当前目录文件index.txt 移动到 src 文件夹
+10. reset 重新初始化终端并清屏
+11. clear 只清屏
+12. history 查看历史命令
+13. help 帮助
+14. exit 退出
+15. # 表示注释。
+-----------2.配置-------------------
+1. git config --system --list 系统配置
+2. git config --global --list 全局配置
+3. git config --global user.name "半亩方糖" 设置用户名全局
+4. git config --global user.email "f@qq.com" 设置邮箱全局
+---------3. 创建------
+1. git init  本地创建
+2. git clone url 拷贝远程的库.
+----------4.4种状态看图(了解即可)看图，这个看不懂算了。---------
+1. Untracked  未追踪的文件，文件存在文件夹中但是没有add入Git库,
+不参与版本控制，通过 git add 变为 Staged 暂存状态。
+2.Unmodify  取消（未）修改的文件，文件已经入库，
+如果被修改就会变成 modified 已经修改状态， 如果 git rm 移除Git版本库就会变成 Untracked 未追踪文件。
+3.modified :已经修改的状态，这文件有你2个去处，1.通过 git add 进入 staged 暂存状态，
+    2.使用 git checkout就放弃修改，回到未修改的状态，unmodify. 这个 git checkout 就是重中取出文件覆盖当前的修改。
+4. staged ：暂存状态， 执行 git commit 就将 提交暂存区的内容到本地仓库。这个库的文件和本地的文件变为一致，
+文件未unmodify 状态，执行 git reset HEAD filename 取消暂存。文件状态未 modified.
+---------------5.状态的改变-------------------
+1. 查看指定文件的状态
+git status [fileName]
+2.查看所有文件的状态
+git status
+3. 添加所有文件到暂存区，
+git add .
+添加指定文件到暂存区
+git add index.html
+4. 提交暂存区的内容到本地仓库，-m "注释的消息内容"。
+git commit -m "new file hello.txt"
+

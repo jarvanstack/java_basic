@@ -1,0 +1,38 @@
+Scanner 更多用法。
+比如：
+一、该代码允许从文件myNumbers中的条目分配long类型：
+
+
+        Scanner sc = new Scanner(new File("myNumbers"));
+        while (sc.hasNextLong()) {
+            long aLong = sc.nextLong();
+        }
+二、扫描仪也可以使用除空格之外的分隔符。 此示例从字符串读取几个项目：
+
+
+       String input = "1 fish 2 fish red fish blue fish";
+       Scanner s = new Scanner(input).useDelimiter("//s*fish//s*");
+       System.out.println(s.nextInt());
+       System.out.println(s.nextInt());
+       System.out.println(s.next());
+       System.out.println(s.next());
+       s.close();
+打印以下输出：
+
+
+         1
+         2
+         red
+         blue
+三、可以使用此代码生成相同的输出，该代码使用正则表达式一次解析所有四个令牌：
+
+
+       String input = "1 fish 2 fish red fish blue fish";
+       Scanner s = new Scanner(input);
+       s.findInLine("(//d+) fish (//d+) fish (//w+) fish (//w+)");
+       MatchResult result = s.match();
+       for (int i=1; i<=result.groupCount(); i++)
+           System.out.println(result.group(i));
+       s.close();
+       //match()
+
